@@ -1,0 +1,24 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Votes collection - users can only create their own vote document
+    match /votes/{userId} {
+      // Users can read their own vote
+      allow read: if request.auth != null && request.auth.uid == userId;
+      
+      // Anyone authenticated can read all votes (for vote counts)
+      allow read: if request.auth != null;
+      
+      // Users can create their own vote (only once)
+      allow create: if request.auth != null 
+                    && request.auth.uid == userId
+                    && !exists(/databases/$(database)/documents/votes/$(userId))
+                    && request.resource.data.vote is string
+                    && request.resource.data.vote in ['yes', 'no'];
+      
+      // Users cannot update or delete their vote (prevents duplicate votes)
+      allow update, delete: if false;
+    }
+  }
+}
+

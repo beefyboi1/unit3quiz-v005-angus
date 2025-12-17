@@ -1,0 +1,266 @@
+.statement-container {
+  background: #1a1f2e;
+  border-radius: 12px;
+  padding: 3rem;
+  margin-top: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  border: 1px solid #2a2f3e;
+}
+
+.statement-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 3px solid #1976d2;
+}
+
+.statement-header h2 {
+  font-size: 2.5rem;
+  color: #64b5f6;
+  margin-bottom: 1rem;
+}
+
+.statement-subtitle {
+  font-size: 1.3rem;
+  color: #b0bec5;
+  font-weight: 500;
+}
+
+.statement-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.intro-section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: rgba(25, 118, 210, 0.1);
+  border-radius: 12px;
+  border-left: 5px solid #1976d2;
+  border: 1px solid #2a2f3e;
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+}
+
+.intro-text strong {
+  color: #64b5f6;
+  font-weight: 700;
+}
+
+.data-analysis,
+.stance-section,
+.funding-section,
+.commitment-section,
+.call-to-action {
+  margin-bottom: 3rem;
+}
+
+.statement-content h3 {
+  font-size: 1.8rem;
+  color: #64b5f6;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.statement-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #b0bec5;
+  margin-bottom: 1rem;
+}
+
+.statement-content ul {
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+}
+
+.statement-content li {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #b0bec5;
+  margin-bottom: 1rem;
+}
+
+.statement-content strong {
+  color: #64b5f6;
+  font-weight: 600;
+}
+
+/* Policy Cards */
+.policy-points {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.policy-card {
+  background: #0f1419;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border-left: 5px solid #1976d2;
+  transition: all 0.3s ease;
+  border: 1px solid #2a2f3e;
+}
+
+.policy-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+  transform: translateX(5px);
+  border-color: #1976d2;
+}
+
+.policy-card h4 {
+  font-size: 1.3rem;
+  color: #64b5f6;
+  margin-bottom: 1rem;
+}
+
+.policy-card ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.policy-card li {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Funding Section */
+.funding-section {
+  background: rgba(46, 213, 115, 0.1);
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 5px solid #2ed573;
+  border: 1px solid #2a2f3e;
+}
+
+.funding-note {
+  background: #0f1419;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  border-left: 4px solid #2ed573;
+  color: #e0e0e0;
+}
+
+.funding-note strong {
+  color: #2ed573;
+}
+
+/* Commitment Section */
+.commitment-section {
+  background: rgba(255, 71, 87, 0.1);
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 5px solid #ff4757;
+  border: 1px solid #2a2f3e;
+}
+
+/* Call to Action */
+.call-to-action {
+  text-align: center;
+  background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+  color: white;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  border: 1px solid #0d47a1;
+}
+
+.call-to-action h3 {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.call-to-action p {
+  color: white;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.closing-message {
+  font-size: 1.4rem !important;
+  font-weight: 700;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+
+.signature {
+  font-size: 1.3rem !important;
+  font-style: italic;
+  margin-top: 2rem;
+  opacity: 0.95;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .statement-container {
+    padding: 1.5rem;
+  }
+
+  .statement-header h2 {
+    font-size: 2rem;
+  }
+
+  .statement-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .intro-section {
+    padding: 1.5rem;
+  }
+
+  .intro-text {
+    font-size: 1.05rem;
+  }
+
+  .statement-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .statement-content p {
+    font-size: 1rem;
+  }
+
+  .statement-content li {
+    font-size: 0.95rem;
+  }
+
+  .policy-card h4 {
+    font-size: 1.1rem;
+  }
+
+  .policy-card li {
+    font-size: 0.9rem;
+  }
+
+  .call-to-action {
+    padding: 2rem 1.5rem;
+  }
+
+  .call-to-action h3 {
+    font-size: 1.5rem;
+  }
+
+  .call-to-action p {
+    font-size: 1rem;
+  }
+
+  .closing-message {
+    font-size: 1.1rem !important;
+  }
+
+  .signature {
+    font-size: 1.1rem !important;
+  }
+}
+
