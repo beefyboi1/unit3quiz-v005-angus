@@ -22,19 +22,24 @@
 
 .vote-button {
   border: none;
-  padding: 1.5rem 2.5rem;
+  padding: 1.25rem 2rem;
   border-radius: 12px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
-  min-width: 250px;
+  min-width: 220px;
+  max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
   position: relative;
   overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  box-sizing: border-box;
 }
 
 /* YES Button - Flashy and Bright */
@@ -44,7 +49,7 @@
   box-shadow: 0 8px 32px rgba(0, 255, 136, 0.4),
               0 0 20px rgba(0, 255, 136, 0.3),
               inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  animation: pulse-glow 2s ease-in-out infinite;
+  animation: flash-bright-dark 1.5s ease-in-out infinite;
   border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -53,7 +58,7 @@
   box-shadow: 0 12px 48px rgba(0, 255, 136, 0.6),
               0 0 30px rgba(0, 255, 136, 0.5),
               inset 0 1px 0 rgba(255, 255, 255, 0.4);
-  animation: pulse-glow-fast 1s ease-in-out infinite;
+  animation: flash-bright-dark-fast 0.8s ease-in-out infinite;
 }
 
 .vote-yes:active:not(:disabled) {
@@ -75,29 +80,81 @@
   animation: shine 3s infinite;
 }
 
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 8px 32px rgba(0, 255, 136, 0.4),
-                0 0 20px rgba(0, 255, 136, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+@keyframes flash-bright-dark {
+  0% {
+    background: linear-gradient(135deg, #00ff88 0%, #00d4ff 50%, #7b00ff 100%);
+    box-shadow: 0 8px 32px rgba(0, 255, 136, 0.3),
+                0 0 15px rgba(0, 255, 136, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    filter: brightness(0.9);
+  }
+  25% {
+    background: linear-gradient(135deg, #00ff88 0%, #00d4ff 50%, #7b00ff 100%);
+    box-shadow: 0 8px 32px rgba(0, 255, 136, 0.3),
+                0 0 15px rgba(0, 255, 136, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    filter: brightness(0.9);
   }
   50% {
-    box-shadow: 0 8px 32px rgba(0, 255, 136, 0.6),
-                0 0 30px rgba(0, 255, 136, 0.5),
-                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    background: linear-gradient(135deg, #00ffaa 0%, #00e6ff 50%, #8c1aff 100%);
+    box-shadow: 0 12px 48px rgba(0, 255, 136, 0.8),
+                0 0 40px rgba(0, 255, 136, 0.7),
+                0 0 60px rgba(0, 212, 255, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    filter: brightness(1.3);
+  }
+  75% {
+    background: linear-gradient(135deg, #00ff88 0%, #00d4ff 50%, #7b00ff 100%);
+    box-shadow: 0 8px 32px rgba(0, 255, 136, 0.3),
+                0 0 15px rgba(0, 255, 136, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    filter: brightness(0.9);
+  }
+  100% {
+    background: linear-gradient(135deg, #00ff88 0%, #00d4ff 50%, #7b00ff 100%);
+    box-shadow: 0 8px 32px rgba(0, 255, 136, 0.3),
+                0 0 15px rgba(0, 255, 136, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    filter: brightness(0.9);
   }
 }
 
-@keyframes pulse-glow-fast {
-  0%, 100% {
-    box-shadow: 0 12px 48px rgba(0, 255, 136, 0.6),
-                0 0 30px rgba(0, 255, 136, 0.5),
-                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+@keyframes flash-bright-dark-fast {
+  0% {
+    background: linear-gradient(135deg, #00ff88 0%, #00d4ff 50%, #7b00ff 100%);
+    box-shadow: 0 12px 48px rgba(0, 255, 136, 0.5),
+                0 0 25px rgba(0, 255, 136, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    filter: brightness(0.95);
+  }
+  25% {
+    background: linear-gradient(135deg, #00ff88 0%, #00d4ff 50%, #7b00ff 100%);
+    box-shadow: 0 12px 48px rgba(0, 255, 136, 0.5),
+                0 0 25px rgba(0, 255, 136, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    filter: brightness(0.95);
   }
   50% {
-    box-shadow: 0 12px 48px rgba(0, 255, 136, 0.8),
-                0 0 40px rgba(0, 255, 136, 0.7),
-                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    background: linear-gradient(135deg, #00ffcc 0%, #00ffff 50%, #aa33ff 100%);
+    box-shadow: 0 16px 64px rgba(0, 255, 136, 1),
+                0 0 50px rgba(0, 255, 136, 0.9),
+                0 0 80px rgba(0, 212, 255, 0.7),
+                inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    filter: brightness(1.5);
+  }
+  75% {
+    background: linear-gradient(135deg, #00ff88 0%, #00d4ff 50%, #7b00ff 100%);
+    box-shadow: 0 12px 48px rgba(0, 255, 136, 0.5),
+                0 0 25px rgba(0, 255, 136, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    filter: brightness(0.95);
+  }
+  100% {
+    background: linear-gradient(135deg, #00ff88 0%, #00d4ff 50%, #7b00ff 100%);
+    box-shadow: 0 12px 48px rgba(0, 255, 136, 0.5),
+                0 0 25px rgba(0, 255, 136, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    filter: brightness(0.95);
   }
 }
 
@@ -146,6 +203,7 @@
 .vote-yes.voted {
   background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%);
   animation: none;
+  filter: brightness(1);
 }
 
 .vote-no.voted {
@@ -161,6 +219,10 @@
 .vote-text {
   font-weight: 700;
   letter-spacing: 0.5px;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  flex-shrink: 1;
+  text-align: center;
 }
 
 .vote-counts {
@@ -251,11 +313,37 @@
 
   .vote-button {
     width: 100%;
-    padding: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    font-size: 0.9rem;
+    min-width: auto;
+  }
+
+  .vote-text {
+    font-size: 0.85rem;
+  }
+
+  .vote-emoji {
+    font-size: 1.25rem;
   }
 
   .vote-counts {
     flex-direction: column;
     gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .vote-button {
+    padding: 1rem 1.25rem;
+    font-size: 0.85rem;
+    gap: 0.4rem;
+  }
+
+  .vote-text {
+    font-size: 0.8rem;
+  }
+
+  .vote-emoji {
+    font-size: 1.1rem;
   }
 }

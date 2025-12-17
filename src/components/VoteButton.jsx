@@ -136,7 +136,7 @@ function VoteButton() {
           className={`vote-button vote-yes ${hasVoted && userVote === 'yes' ? 'voted' : ''} ${hasVoted ? 'disabled' : ''}`}
         >
           <span className="vote-emoji">✨</span>
-          <span className="vote-text">YES - I Support This Policy</span>
+          <span className="vote-text">YES - I Support</span>
           <span className="vote-shine">✨</span>
         </button>
         
